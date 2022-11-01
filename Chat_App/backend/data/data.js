@@ -14,6 +14,7 @@ const chats = [
     _id: "617a077e18c25468bc7c4dd4",
     chatName: "John Doe",
   },
+
   {
     isGroupChat: false,
     users: [
@@ -29,6 +30,7 @@ const chats = [
     _id: "617a077e18c25468b27c4dd4",
     chatName: "Guest User",
   },
+
   {
     isGroupChat: false,
     users: [
@@ -44,6 +46,7 @@ const chats = [
     _id: "617a077e18c2d468bc7c4dd4",
     chatName: "Anthony",
   },
+
   {
     isGroupChat: true,
     users: [
@@ -67,6 +70,7 @@ const chats = [
       email: "guest@example.com",
     },
   },
+
   {
     isGroupChat: false,
     users: [
@@ -82,6 +86,7 @@ const chats = [
     _id: "617a077e18c25468bc7cfdd4",
     chatName: "Jane Doe",
   },
+
   {
     isGroupChat: true,
     users: [
