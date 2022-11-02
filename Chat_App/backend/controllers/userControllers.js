@@ -1,4 +1,3 @@
-const e = require("express");
 const asyncHandler = require("express-async-handler");
 const generateToken = require("../config/generateToken");
 const User = require("../models/userModel");
@@ -41,11 +40,10 @@ const registeUser = asyncHandler(async (req, res) => {
 });
 
 ///////////////////////////////////////////////////////////////////////
-const authUser = asyncHandler(async (req, res) => {
+const authUser = async (req, res) => {
   const { email, password } = req.body;
 
   const user = await User.findOne({ email });
-
   if (user && (await user.matchPassword(password))) {
     res.json({
       _id: user._id,
@@ -58,6 +56,20 @@ const authUser = asyncHandler(async (req, res) => {
   } else {
     res.status(401).send("Invalid email or password");
   }
+};
+/////////////////////
+// /api/user?search=jyoti
+const allUsers = asyncHandler(async (req, res) => {
+  const keyword = req.query.search
+    ? {
+        $or: [
+          { name: { $regex: req.query.search, $options: "i" } },
+          { email: { $regex: req.query.search, $options: "i" } },
+        ],
+      }
+    : {};
+  const users = await User.find(keyword).find({ _id: { $ne: req.user._id } });
+  res.send(users);
 });
 
-module.exports = { registeUser, authUser };
+module.exports = { registeUser, authUser, allUsers };

@@ -4,12 +4,13 @@ const chats = require("./data/data");
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
+const cors = require("cors");
 
 dotenv.config();
 connectDB();
 const app = express();
+app.use(cors());
 app.use(express.json());
-
 app.get("/", (req, res) => res.send("hello express"));
 
 app.use("/api/user", userRoutes);
