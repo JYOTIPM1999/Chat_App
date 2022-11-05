@@ -186,7 +186,7 @@ const Signup = () => {
         </InputGroup>
       </FormControl>
       <FormControl id="pic">
-        <FormLabel>Upload your picture</FormLabel>
+        <FormLabel>Upload your pictures</FormLabel>
         <Input
           type={"file"}
           p={1.5}
