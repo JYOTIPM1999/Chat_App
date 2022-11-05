@@ -1,0 +1,22 @@
+.App {
+  /* text-align: center; */
+  min-height: 100vh;
+  display: flex;
+  background-image: url("https://img.freepik.com/premium-photo/oval-blank-chat-box-with-colorful-striped-background-design-communication-bubble-template-representing-chatting-messaging-through-social-networking-media_424947-7207.jpg");
+  background-size: contain;
+  background-position: center;
+  /* color: black; */
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.281);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
