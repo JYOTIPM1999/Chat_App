@@ -22,7 +22,7 @@ const ScrollableChat = ({ messages }) => {
               <Tooltip label={m.sender.name} placement="buttom-start" hasArrow>
                 <Avatar
                   mt="7px"
-                  mr="16px"
+                  mr={1}
                   size="sm"
                   cursor="pointer"
                   name={m.sender.name}
