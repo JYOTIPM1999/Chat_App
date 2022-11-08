@@ -43,7 +43,7 @@ const Login = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/user/login",
+        "https://chat-app-api-jyoti.onrender.com/api/user/login",
         {
           email,
           password,
@@ -79,7 +79,7 @@ const Login = () => {
   // const loginWithGithub = async () => {
   //   try {
   //     const { data } = await axios.get(
-  //       "http://localhost:8080/api/user/github/callback"
+  //       "https://chat-app-api-jyoti.onrender.com/api/user/github/callback"
   //     );
 
   //     console.log(data);
@@ -110,10 +110,13 @@ const Login = () => {
   const sendMail = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:8080/api/user/mail", {
-        smtpMail,
-        text,
-      });
+      const { data } = await axios.post(
+        "https://chat-app-api-jyoti.onrender.com/api/user/mail",
+        {
+          smtpMail,
+          text,
+        }
+      );
 
       console.log(data);
 

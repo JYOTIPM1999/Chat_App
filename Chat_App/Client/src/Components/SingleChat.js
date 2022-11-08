@@ -19,7 +19,7 @@ import io from "socket.io-client";
 import Lottie from "react-lottie";
 import animationData from "../animations/typing.json";
 
-const ENDPOINT = "http://localhost:8080"; // ->Change it After deployment
+const ENDPOINT = "https://chat-app-api-jyoti.onrender.com"; // ->Change it After deployment
 
 let socket, selectedChatCompare;
 
@@ -57,7 +57,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `http://localhost:8080/api/message/${selectedChat._id}`,
+        `https://chat-app-api-jyoti.onrender.com/api/message/${selectedChat._id}`,
         config
       );
       setMessages(data);
@@ -118,7 +118,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         };
         setNewMessage("");
         const { data } = await axios.post(
-          "http://localhost:8080/api/message",
+          "https://chat-app-api-jyoti.onrender.com/api/message",
           {
             content: newMessage,
             chatId: selectedChat._id,

@@ -74,7 +74,7 @@ const SideDrawer = () => {
         },
       };
       const { data } = await axios.get(
-        `http://localhost:8080/api/user?search=${search}`,
+        `https://chat-app-api-jyoti.onrender.com/api/user?search=${search}`,
         config
       );
       setLoading(false);
@@ -102,7 +102,7 @@ const SideDrawer = () => {
         },
       };
       const { data } = await axios.post(
-        `http://localhost:8080/api/chat`,
+        `https://chat-app-api-jyoti.onrender.com/api/chat`,
         { userId },
         config
       );

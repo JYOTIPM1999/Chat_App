@@ -20,7 +20,7 @@ const MyChats = ({ fetchAgain }) => {
         },
       };
       const { data } = await axios.get(
-        "http://localhost:8080/api/chat",
+        "https://chat-app-api-jyoti.onrender.com/api/chat",
         config
       );
       setChats(data);

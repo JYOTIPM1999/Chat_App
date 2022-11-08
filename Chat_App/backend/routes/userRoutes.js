@@ -22,6 +22,7 @@ const router = express.Router();
 router.route("/").post(registeUser).get(protected, allUsers);
 
 router.post("/login", authUser);
+
 // router.get("/github/callback");
 
 router.post("/mail", (req, res) => {
